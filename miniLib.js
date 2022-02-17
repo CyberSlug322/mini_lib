@@ -1,4 +1,4 @@
-    const obj = {};
+const obj = {};
 export default (function(){
     obj.isArray = function (obj) {
         return Array.isArray(obj);
@@ -56,7 +56,6 @@ export default (function(){
         return Array.isArray(arr) ? arr[arr.length-1] : undefined;
     }
 
-    return obj
+    return obj;
 
-    
 })();

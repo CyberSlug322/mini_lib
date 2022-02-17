@@ -90,9 +90,9 @@ const {isArray, isBoolean, isDate, isNumber, isString, isFunction,
       });
 
       test('checking if asChain method works properly', () => {
-        expect(asChain([1,2,3,4,5]).skip(1).array).toEqual([2,3,4,5]);
-        expect(asChain([1,2,3,4,5]).skip(10).array).toEqual([]);
-        expect(asChain([1,2,3,4,5]).take(1).array).toEqual([1]);
-        expect(asChain([1,2,3,4,5]).take(10).array).toEqual([1,2,3,4,5]);
+        expect(asChain([1,2,3,4,5]).skip(1).newArray).toEqual([2,3,4,5]);
+        expect(asChain([1,2,3,4,5]).skip(10).newArray).toEqual([]);
+        expect(asChain([1,2,3,4,5]).take(1).newArray).toEqual([1]);
+        expect(asChain([1,2,3,4,5]).take(10).newArray).toEqual([1,2,3,4,5]);
         expect(asChain([1,2,3]).arr).toEqual([1,2,3]);
       });

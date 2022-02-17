@@ -72,3 +72,23 @@ const {isArray, isBoolean, isDate, isNumber, isString, isFunction,
         expect(isNull("")).toBe(false);
         expect(isNull(null)).toBe(true);
       });
+
+      test("checking if the function returns data of array's first index", () => {
+        expect(first({})).toBe(undefined);
+        expect(first([])).toBe(undefined);
+        expect(first([1])).toBe(1);
+        expect(first([5,2,3,4])).toBe(5);
+        expect(first([,2,3])).toBe(undefined);
+      });
+
+      test("checking if the function returns data of array's last index", () => {
+        expect(last({})).toBe(undefined);
+        expect(last([])).toBe(undefined);
+        expect(last([1])).toBe(1);
+        expect(last([5,2,3,4])).toBe(4);
+        expect(last([,2,3,])).toBe(3);
+      });
+
+    //   test('checking if the passed argument is null', () => {
+    //     expect(isNull({})).toBe(false);
+    //   });

@@ -36,14 +36,18 @@ export default (function(){
         return {
             arr,
             skip: function (arr, number) {
-                const array = Object.entries(arr);
-                array[0].splice(0,number);
-                return Object.fromEntries(array);
+                const newArray = [];
+                for (let i = number; i < array.length; i++) {
+                    newArray.push(this.arr[i]);
+                }
+                return {newArray};
             },
             take: function take(arr, number) {
-                const array = Object.entries(arr);
-                array[0] = array[0].slice(0,number);
-                return Object.fromEntries(array);
+                const newArray;
+                for (let i = 0; i < number; i++) {
+                    newArray.push(this.arr[i]);
+                }
+                return {newArray};
             }
         };
     }

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/CyberSlug322/mini_lib/issues"
   },
-  "homepage": "https://github.com/CyberSlug322/mini_lib#readme"
+  "homepage": "https://github.com/CyberSlug322/mini_lib#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
 }

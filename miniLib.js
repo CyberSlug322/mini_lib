@@ -36,7 +36,7 @@ module.exports =  (function(){
         return {
             arr,
             skip: function (arr, number) {
-                const array = Object.entries(arr);
+                const array = Object.entries(arr)[0];
                 array[0].splice(0,number);
                 return Object.fromEntries(array);
             },

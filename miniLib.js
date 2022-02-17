@@ -1,5 +1,5 @@
 const obj = {};
-export default (function(){
+module.exports =  (function(){
     obj.isArray = function (obj) {
         return Array.isArray(obj);
     }

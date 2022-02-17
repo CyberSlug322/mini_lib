@@ -9,7 +9,7 @@ export default (function(){
     }
     
     obj.isDate = function (obj) {
-        return obj.__proto__ === Date.prototype;
+        return obj ? obj.__proto__ === Date.prototype : false;
     }
     
     obj.isNumber = function (obj) {

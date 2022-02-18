@@ -35,21 +35,17 @@ module.exports =  (function(){
     obj.asChain = function (arr) {
         return {
             arr,
-            skip: function (array,number) {
-                const newArray = [];
-                for (let i = number; i < array.length; i++) {
-                    newArray.push(array.arr[i]);
+            skip(number) {
+                for (let i = number; i > 0; i--) {
+                    this.arr.shift();
                 }
-                return {newArray};
+                return this;
             },
-            take: function (array,number) {
-                const newArray = [];
-                for (let i = 0; i < number; i++) {
-                    if (!array[i]) break;
-                    newArray.push(array[i]);
+            take(number) {
+                for (let i = this.arr.length-1; i >= number; i--) {
+                    this.arr.pop();
                 }
-                console.log(newArray)
-                return {newArray};
+                return this;
             }
         };
     }

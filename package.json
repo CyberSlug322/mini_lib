@@ -1,17 +1,21 @@
 {
-  "name": "js-mini-lib",
+  "name": "jest-test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "mylib.js",
   "scripts": {
     "test": "jest"
   },
+  "jest": {
+    "testEnvironment":"jsdom"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CyberSlug322/mini_lib.git"
   },
   "author": "",
   "license": "ISC",
+  
   "bugs": {
     "url": "https://github.com/CyberSlug322/mini_lib/issues"
   },

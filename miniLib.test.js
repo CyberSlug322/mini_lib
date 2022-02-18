@@ -25,13 +25,13 @@ const {isArray, isBoolean, isDate, isNumber, isString, isFunction,
         expect(isBoolean(true)).toBe(true);
       });
 
-    //   test('checking if the passed argument is date', () => {
-    //     expect(isDate(Date.now())).toBe(false);
-    //     expect(isDate('')).toBe(false);
-    //     expect(isDate(null)).toBe(false);
-    //     expect(isDate([])).toBe(false);
-    //     expect(isDate(new Date())).toBe(true);
-    //   });
+      test('checking if the passed argument is date', () => {
+        expect(isDate(Date.now())).toBe(false);
+        expect(isDate('')).toBe(false);
+        expect(isDate(null)).toBe(false);
+        expect(isDate([])).toBe(false);
+        expect(isDate(new Date())).toBe(true);
+      });
 
       test('checking if the passed argument is a number', () => {
         expect(isNumber({})).toBe(false);
@@ -94,5 +94,7 @@ const {isArray, isBoolean, isDate, isNumber, isString, isFunction,
         expect(asChain([1,2,3,4,5]).skip(10).newArray).toEqual([]);
         expect(asChain([1,2,3,4,5]).take(1).newArray).toEqual([1]);
         expect(asChain([1,2,3,4,5]).take(10).newArray).toEqual([1,2,3,4,5]);
+        expect(asChain([1,2,3,4,5]).take(3).take(2).take(1).newArray).toEqual([1
+        ]);
         expect(asChain([1,2,3]).arr).toEqual([1,2,3]);
       });

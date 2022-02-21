@@ -1,67 +1,63 @@
-const obj = {};
-module.exports =  (function(){
-    obj.isArray = function (obj) {
+
+  (function(module){
+    module.isArray = function (obj) {
         return Array.isArray(obj);
     }
     
-    obj.isBoolean = function (obj) {
+    module.isBoolean = function (obj) {
         return typeof obj === "boolean";
     }
     
-    obj.isDate = function (obj) {
+    module.isDate = function (obj) {
         return obj ? obj.__proto__ === Date.prototype : false;
     }
     
-    obj.isNumber = function (obj) {
+    module.isNumber = function (obj) {
         return typeof obj === "number";
     }
     
-    obj.isString = function (obj) {
+    module.isString = function (obj) {
         return typeof obj === "string";
     }
     
-    obj.isFunction = function (obj) {
+    module.isFunction = function (obj) {
         return typeof obj === "function";
     }
     
-    obj.isUndefined = function (obj) {
+    module.isUndefined = function (obj) {
         return obj === undefined;
     }
     
-    obj.isNull = function (obj) {
+    module.isNull = function (obj) {
         return obj === null;
     }
     
-    obj.asChain = function (arr) {
+    module.asChain = function (arr) {
         return {
             arr,
-            skip: function (array,number) {
-                const newArray = [];
-                for (let i = number; i < array.length; i++) {
-                    newArray.push(array.arr[i]);
+            skip(number) {
+                const newArr = []
+                for (let i = number; i < this.arr.length; i++) {
+                    newArr.push(this.arr[i]);
                 }
-                return {newArray};
+                this.arr = newArr;
+                return this;
             },
-            take: function (array,number) {
-                const newArray = [];
-                for (let i = 0; i < number; i++) {
-                    if (!array[i]) break;
-                    newArray.push(array[i]);
+            take(number) {
+                for (let i = this.arr.length-1; i >= number; i--) {
+                    this.arr.pop();
                 }
-                console.log(newArray)
-                return {newArray};
+                return this;
             }
         };
     }
     
-    obj.first = function (arr) {
+    module.first = function (arr) {
         return Array.isArray(arr) ? arr[0] : undefined;
     }
     
-    obj.last = function (arr) {
+    module.last = function (arr) {
         return Array.isArray(arr) ? arr[arr.length-1] : undefined;
     }
 
-    return obj;
-
-})();
+})(window);

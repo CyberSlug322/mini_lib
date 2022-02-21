@@ -36,9 +36,11 @@
         return {
             arr,
             skip(number) {
-                for (let i = number; i > 0; i--) {
-                    this.arr.shift();
+                const newArr = []
+                for (let i = number; i < this.arr.length; i++) {
+                    newArr.push(this.arr[i]);
                 }
+                this.arr = newArr;
                 return this;
             },
             take(number) {
